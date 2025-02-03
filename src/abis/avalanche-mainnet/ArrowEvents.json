@@ -1,0 +1,893 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "string",
+        "name": "hashedTicker",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "ticker",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "underlyingAssetAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "priceFeedAddress",
+        "type": "address"
+      }
+    ],
+    "name": "AssetAddressUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "string",
+        "name": "hashedContractName",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "contractName",
+        "type": "string"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newAddress",
+        "type": "address"
+      }
+    ],
+    "name": "ContractAddressSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "string",
+        "name": "hashedContractName",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "contractName",
+        "type": "string"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "oldAddress",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newAddress",
+        "type": "address"
+      }
+    ],
+    "name": "ContractAddressUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "oldAddress",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newAddress",
+        "type": "address"
+      }
+    ],
+    "name": "ManagerAddressUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "ownerAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "marketMakerAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "id",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "requiredQuantity",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "payableQuantity",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "currentBalance",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "requiredBalance",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "currentApprovedAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "requiredApprovedAmount",
+            "type": "uint256"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct ExpectedUnderFundedParams",
+        "name": "params",
+        "type": "tuple"
+      }
+    ],
+    "name": "MarketMakerUnderfunded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "longFlag",
+        "type": "bool"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "ownerAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_id",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "quantity",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "optionPrice",
+        "type": "uint256"
+      }
+    ],
+    "name": "NewPositionCreation",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "longFlag",
+        "type": "bool"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "ownerAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "quantity",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "optionPrice",
+        "type": "uint256"
+      }
+    ],
+    "name": "NewPositionDestruction",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "ticker",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "expiration",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256[2]",
+        "name": "strike",
+        "type": "uint256[2]"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "decimalStrike",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "contractType",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "marketMaker",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      }
+    ],
+    "name": "OptionCreation",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "ownerAddress",
+        "type": "address"
+      }
+    ],
+    "name": "OptionSettled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "ticker",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "expiration",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256[2]",
+        "name": "strike",
+        "type": "uint256[2]"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "decimalStrike",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "contractType",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "marketMaker",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "OptionTransfer",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "positionManagerAddress",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "string",
+        "name": "hashedTicker",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "ticker",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "expiration",
+        "type": "uint256"
+      }
+    ],
+    "name": "PositionManagerCreation",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "string",
+        "name": "hashedVariableName",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "variableName",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "oldAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "newAddress",
+        "type": "address"
+      }
+    ],
+    "name": "RegistryAddressUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "string",
+        "name": "hashedVariableName",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "variableName",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "oldValue",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "newValue",
+        "type": "uint256"
+      }
+    ],
+    "name": "RegistryUint256ValueUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "ticker",
+        "type": "string"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "expiration",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "settlementPrice",
+        "type": "uint256"
+      }
+    ],
+    "name": "Settlement",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_ticker",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "_underlyingAssetAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_priceFeedAddress",
+        "type": "address"
+      }
+    ],
+    "name": "emitAssetAddressUpdated",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "ownerAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "marketMakerAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "id",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "requiredQuantity",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "payableQuantity",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "currentBalance",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "requiredBalance",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "currentApprovedAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "requiredApprovedAmount",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct ExpectedUnderFundedParams",
+        "name": "params",
+        "type": "tuple"
+      }
+    ],
+    "name": "emitMarketMakerUnderfunded",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bool",
+            "name": "longFlag",
+            "type": "bool"
+          },
+          {
+            "internalType": "address",
+            "name": "ownerAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "id",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "quantity",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "optionPrice",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct NewPositionParams",
+        "name": "params",
+        "type": "tuple"
+      }
+    ],
+    "name": "emitNewPositionCreation",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bool",
+            "name": "longFlag",
+            "type": "bool"
+          },
+          {
+            "internalType": "address",
+            "name": "ownerAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "id",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "quantity",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "optionPrice",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct NewPositionParams",
+        "name": "params",
+        "type": "tuple"
+      }
+    ],
+    "name": "emitNewPositionDestruction",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bool",
+            "name": "longFlag",
+            "type": "bool"
+          },
+          {
+            "internalType": "string",
+            "name": "ticker",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "expiration",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256[2]",
+            "name": "strike",
+            "type": "uint256[2]"
+          },
+          {
+            "internalType": "string",
+            "name": "decimalStrike",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "contractType",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "marketMaker",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct OptionDataType",
+        "name": "params",
+        "type": "tuple"
+      },
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      }
+    ],
+    "name": "emitOptionCreation",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "ownerAddress",
+        "type": "address"
+      }
+    ],
+    "name": "emitOptionSettled",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bool",
+            "name": "longFlag",
+            "type": "bool"
+          },
+          {
+            "internalType": "string",
+            "name": "ticker",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "expiration",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256[2]",
+            "name": "strike",
+            "type": "uint256[2]"
+          },
+          {
+            "internalType": "string",
+            "name": "decimalStrike",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "contractType",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "marketMaker",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct OptionDataType",
+        "name": "params",
+        "type": "tuple"
+      },
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "emitOptionTransfer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_variableName",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "_oldAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_newAddress",
+        "type": "address"
+      }
+    ],
+    "name": "emitRegistryAddressUpdated",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_variableName",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_oldValue",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_newValue",
+        "type": "uint256"
+      }
+    ],
+    "name": "emitRegistryUint256ValueUpdated",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "ticker",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "expiration",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "settlementPrice",
+        "type": "uint256"
+      }
+    ],
+    "name": "emitSettlement",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_contractName",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "_oldAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_newAddress",
+        "type": "address"
+      }
+    ],
+    "name": "emitSystemAddressUpdated",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

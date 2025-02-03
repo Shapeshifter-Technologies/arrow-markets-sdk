@@ -1,0 +1,469 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "bool",
+        "name": "_longFlag",
+        "type": "bool"
+      },
+      {
+        "internalType": "string",
+        "name": "_ticker",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_expiration",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256[2]",
+        "name": "_strike",
+        "type": "uint256[2]"
+      },
+      {
+        "internalType": "string",
+        "name": "_decimalStrike",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_contractType",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "_marketMaker",
+        "type": "address"
+      }
+    ],
+    "name": "createNewOption",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "decimals",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_hashValueForId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "deleteId",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_expectedPayoff",
+        "type": "uint256"
+      }
+    ],
+    "name": "getExpectedOptionQuantity",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_settlementPrice",
+        "type": "uint256"
+      }
+    ],
+    "name": "getExpectedSinglePayoff",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_owner",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_settlementPrice",
+        "type": "uint256"
+      }
+    ],
+    "name": "getOwnerPayoff",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_settlementPrice",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_quantity",
+        "type": "uint256"
+      }
+    ],
+    "name": "getPayoff",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "name": "ids",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "latestId",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "optionData",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "longFlag",
+        "type": "bool"
+      },
+      {
+        "internalType": "string",
+        "name": "ticker",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "expiration",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "decimalStrike",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "contractType",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "marketMaker",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "name": "orderUsedMessages",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "name": "positionPriceUsedMessages",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "setSingleOptionPayoff",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "singleOptionPayoff",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "transferPosition",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bool",
+            "name": "longFlag",
+            "type": "bool"
+          },
+          {
+            "internalType": "string",
+            "name": "ticker",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "expiration",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256[2]",
+            "name": "strike",
+            "type": "uint256[2]"
+          },
+          {
+            "internalType": "string",
+            "name": "decimalStrike",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "contractType",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "quantity",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "thresholdPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "signatureTimestamp",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "optionPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "senderAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "orderDeadline",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes",
+            "name": "signature",
+            "type": "bytes"
+          },
+          {
+            "internalType": "uint256",
+            "name": "positionParamsTimestamp",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "positionParamsDeadline",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes",
+            "name": "positionParamsSignature",
+            "type": "bytes"
+          },
+          {
+            "internalType": "address",
+            "name": "marketMaker",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "newMarketMaker",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct OpenOptionParams",
+        "name": "openOptionParams",
+        "type": "tuple"
+      }
+    ],
+    "name": "verifyId",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

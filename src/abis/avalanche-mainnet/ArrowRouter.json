@@ -1,0 +1,320 @@
+[
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bool",
+            "name": "longFlag",
+            "type": "bool"
+          },
+          {
+            "internalType": "string",
+            "name": "ticker",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "expiration",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256[2]",
+            "name": "strike",
+            "type": "uint256[2]"
+          },
+          {
+            "internalType": "string",
+            "name": "decimalStrike",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "contractType",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "quantity",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "thresholdPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "signatureTimestamp",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "optionPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "senderAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "orderDeadline",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes",
+            "name": "signature",
+            "type": "bytes"
+          },
+          {
+            "internalType": "uint256",
+            "name": "positionParamsTimestamp",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "positionParamsDeadline",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes",
+            "name": "positionParamsSignature",
+            "type": "bytes"
+          },
+          {
+            "internalType": "address",
+            "name": "marketMaker",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "newMarketMaker",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct OpenOptionParams[]",
+        "name": "closeOptionParams",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "closePosition",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getRegistryAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bool",
+            "name": "longFlag",
+            "type": "bool"
+          },
+          {
+            "internalType": "string",
+            "name": "ticker",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "expiration",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256[2]",
+            "name": "strike",
+            "type": "uint256[2]"
+          },
+          {
+            "internalType": "string",
+            "name": "decimalStrike",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "contractType",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "quantity",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "thresholdPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "signatureTimestamp",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "optionPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "senderAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "orderDeadline",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes",
+            "name": "signature",
+            "type": "bytes"
+          },
+          {
+            "internalType": "uint256",
+            "name": "positionParamsTimestamp",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "positionParamsDeadline",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes",
+            "name": "positionParamsSignature",
+            "type": "bytes"
+          },
+          {
+            "internalType": "address",
+            "name": "marketMaker",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "newMarketMaker",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct OpenOptionParams[]",
+        "name": "openOptionParams",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "openPosition",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_minGasLeft",
+        "type": "uint256"
+      }
+    ],
+    "name": "setMinGasLeft",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_ownerAddress",
+        "type": "address"
+      }
+    ],
+    "name": "setOwnerAddress",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_registryAddress",
+        "type": "address"
+      }
+    ],
+    "name": "setRegistryAddress",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_owner",
+        "type": "address"
+      }
+    ],
+    "name": "settleOptions",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_owner",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "_longFlag",
+        "type": "bool"
+      },
+      {
+        "internalType": "string",
+        "name": "_ticker",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_expiration",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "_decimalStrike",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_contractType",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "_marketMaker",
+        "type": "address"
+      }
+    ],
+    "name": "settlePerOption",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
