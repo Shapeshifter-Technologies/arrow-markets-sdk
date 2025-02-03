@@ -22,7 +22,6 @@ jobs:
       - name: Authenticate with NPM
         run: |
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-          npm whoami
 
       - name: Install Dependencies
         run: npm install
