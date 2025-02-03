@@ -1,3 +1,11 @@
+on:
+  push:
+    branches:
+      - develop
+      - prod
+      - staging
+      - feature/*
+
 jobs:
   publish:
     runs-on: ubuntu-latest
