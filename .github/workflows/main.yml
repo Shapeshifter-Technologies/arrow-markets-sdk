@@ -18,9 +18,17 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
+          scope: '@shapeshifter-technologies'
+          always-auth: true
+          token: ${{ secrets.NPM_TOKEN }}
 
       - name: Install Dependencies
         run: npm install
+
+      - name: Authenticate with NPM
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          npm whoami
 
       - name: Publish to NPM
         run: npm publish --access public
