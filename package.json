@@ -1,6 +1,6 @@
 {
   "name": "@shapeshifter-technologies/arrow-rfq-sdk",
-  "version": "3.6.58",
+  "version": "1.0.0",
   "main": "lib/arrow-rfq-sdk.js",
   "types": "lib/arrow-rfq-sdk.d.ts",
   "files": [
